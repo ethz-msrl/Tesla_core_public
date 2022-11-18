@@ -1,0 +1,123 @@
+<!--
+    Tesla - A ROS-based framework for performing magnetic manipulation
+
+    Copyright 2018 Multi Scale Robotics Lab
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<library path="lib/libmag_rviz">
+  <class name="magnetics/Magnetic Field"
+         type="mag_control::MagFieldDisplay"
+         base_class_type="rviz::Display">
+    <description>
+      Displays a vector for the applied magnetic field.
+    </description>
+    <message_type>mag_msgs/FieldStamped</message_type>
+  </class>
+  <class name="magnetics/Magnetic Field Array"
+         type="mag_control::MagFieldArrayDisplay"
+         base_class_type="rviz::Display">
+    <description>
+      Displays vectors for the applied magnetic fields.
+    </description>
+    <message_type>mag_msgs/FieldArrayStamped</message_type>
+  </class>
+  <class name="magnetics/Gradient 3"
+         type="mag_control::MagGrad3Display"
+         base_class_type="rviz::Display">
+    <description>
+      Displays a vector for the 3D force in gradient units.
+    </description>
+    <message_type>mag_msgs/Gradient3Stamped</message_type>
+  </class>
+  <class name="magnetics/Projected Gradient "
+         type="mag_control::MagGrad5Display"
+         base_class_type="rviz::Display">
+    <description>
+        Displays a projection of the 5D gradient in a direction given by the alignement vector parameter.
+    </description>
+    <message_type>mag_msgs/Gradient5Stamped</message_type>
+  </class>
+  <class name="magnetics/Currents"
+         type="mag_control::CurrentsDisplay"
+         base_class_type="rviz::Display">
+    <description>
+        Displays a text overlay of current values in Amps 
+    </description>
+    <message_type>mag_msgs/CurrentsStamped</message_type>
+  </class>
+  <class name="magnetics/Send Currents Panel"
+      type="mag_control::SendCurrentsPanel"
+      base_class_type="rviz::Panel">
+      <description>
+          Manually send current values
+      </description>
+  </class>
+  <class name="magnetics/Currents Panel"
+         type="mag_control::CurrentsPanel"
+         base_class_type="rviz::Panel">
+    <description>
+        Displays current values in Amps 
+    </description>
+  </class>
+  <class name="magnetics/Magnetic Field Panel"
+         type="mag_control::MagFieldPanel"
+         base_class_type="rviz::Panel">
+    <description>
+        Displays and control for magnetic field
+    </description>
+  </class>
+  <class name="magnetics/Magnetic Field Rotation Panel"
+         type="mag_control::MagFieldRotPanel"
+         base_class_type="rviz::Panel">
+    <description>
+        Displays rotation control for magnetic field
+    </description>
+  </class>
+  <class name="magnetics/Dipole Gradient Panel"
+         type="mag_control::DipoleGradientPanel"
+         base_class_type="rviz::Panel">
+    <description>
+        Displays control for dipole gradient
+    </description>
+  </class>
+  <class name="magnetics/Dipole Gradient"
+         type="mag_control::DipoleGradientDisplay"
+         base_class_type="rviz::Display">
+    <description>
+      Displays vectors for the applied magnetic field and dipole gradient.
+    </description>
+    <message_type>mag_msgs/DipoleGradientStamped</message_type>
+  </class>
+  <class name="magnetics/Tracking Update Panel"
+      type="mag_control::TrackingUpdate"
+      base_class_type="rviz::Panel">
+      <description>
+          Trigger a position update
+      </description>
+  </class>
+    <class name="magnetics/View Publisher"
+      type="mag_control::ViewPublisher"
+      base_class_type="rviz::ViewController">
+      <description>
+          View Publisher
+      </description>
+  </class>
+    <class name="magnetics/PS4 Visual"
+      type="mag_control::ps4Visual"
+      base_class_type="rviz::Panel">
+      <description>
+          Visual information to ps4 controller
+      </description>
+  </class>
+</library>

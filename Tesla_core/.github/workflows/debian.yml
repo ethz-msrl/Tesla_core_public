@@ -1,0 +1,95 @@
+name: debians
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build_noetic:
+    runs-on: [self-hosted, packaging]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: ethz-msrl/Tesla_core
+          lfs: true
+          token: ${{ secrets.NAVION_MSRL_READ_TOKEN }}
+      - name: Get release
+        id: get_release
+        uses: bruceadams/get-release@v1.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Clear old debians
+        run: |
+          rm -rf ~/tsc-packages/focal/*.deb
+      - name: Build docker image
+        run: |
+          docker build . -f packaging/Dockerfile.noetic --tag tc-noetic-pkger
+      - name: Run packager
+        run: |
+          docker run --rm -v ~/tsc-packages:/packages tc-noetic-pkger /tc_ws/build-packages.sh
+      - name: Remove older packages from reprepro
+        run: |
+          sudo reprepro -b /var/www/repos/apt/debian/  removematched focal ros-*
+      - name: Add to reprepro
+        run: |
+          sudo reprepro -b /var/www/repos/apt/debian/ includedeb focal ~/tsc-packages/focal/*.deb
+      - name: Zip debians
+        run: |
+          zip -qq -r noetic.zip ~/tsc-packages/focal
+      - name: Upload release binary
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.get_release.outputs.upload_url }}
+          asset_path: ./noetic.zip
+          asset_name: noetic.zip
+          asset_content_type: application/octet-stream
+      - name: Remove zip
+        run: |
+          rm noetic.zip
+
+  build_melodic:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: ethz-msrl/Tesla_core
+          lfs: true
+          token: ${{ secrets.NAVION_MSRL_READ_TOKEN }}
+      - name: Get release
+        id: get_release
+        uses: bruceadams/get-release@v1.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Clear old debians
+        run: |
+          rm -rf ~/tsc-packages/bionic/*.deb
+      - name: Build docker image
+        run: |
+          docker build . -f packaging/Dockerfile.melodic --tag tc-melodic-pkger
+      - name: Run packager
+        run: |
+          docker run --rm -v ~/tsc-packages:/packages tc-melodic-pkger /tc_ws/build-packages.sh
+      - name: Remove older packages from reprepro
+        run: |
+          sudo reprepro -b /var/www/repos/apt/debian/  removematched bionic ros-*
+      - name: Add to reprepro
+        run: |
+          sudo reprepro -b /var/www/repos/apt/debian/ includedeb bionic ~/tsc-packages/bionic/*.deb
+      - name: Zip debians
+        run: |
+          zip -qq -r melodic.zip ~/tsc-packages/bionic
+      - name: Upload release binary
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.get_release.outputs.upload_url }}
+          asset_path: ./melodic.zip
+          asset_name: melodic.zip
+          asset_content_type: application/octet-stream
+      - name: Remove zip
+        run: |
+          rm melodic.zip

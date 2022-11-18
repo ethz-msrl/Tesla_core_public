@@ -1,0 +1,8 @@
+<launch>
+    <param name="system_name" value="dummy" />
+    <param name="num_electromagnets" value="3" type="int" />
+    <rosparam param="max_currents">[8, 8, 8]</rosparam>
+    <param name="max_power" value="15000" type="double" />
+    <rosparam param="coil_resistances">[8, 8, 8]</rosparam>
+    <test test-name="test_emns_parameters_rosparam" pkg="mag_manip" type="test_emns_parameters_rosparam" />
+</launch>

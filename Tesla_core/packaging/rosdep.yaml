@@ -1,0 +1,62 @@
+---
+
+catkin_simple:
+  ubuntu:
+    focal:
+      [ros-noetic-catkin-simple]
+    bionic:
+      [ros-melodic-catkin-simple]
+tsc_utils:
+  ubuntu:
+    bionic:
+      [ros-melodic-tsc-utils]
+    focal:
+      [ros-noetic-tsc-utils]
+mpem:
+  ubuntu:
+    bionic:
+      [ros-melodic-mpem]
+    focal:
+      [ros-noetic-mpem]
+mag_tensorflow:
+  ubuntu:
+    bionic:
+      [ros-melodic-mag-tensorflow]
+    focal:
+      [ros-noetic-mag-tensorflow]
+mag_msgs:
+  ubuntu:
+    bionic:
+      [ros-melodic-mag-msgs]
+    focal:
+      [ros-noetic-mag-msgs]
+mag_rod_msgs:
+  ubuntu:
+    bionic:
+      [ros-melodic-mag-rod-msgs]
+    focal:
+      [ros-noetic-mag-rod-msgs]
+ecb_msgs:
+  ubuntu:
+    bionic:
+      [ros-melodic-ecb-msgs]
+    focal:
+      [ros-noetic-ecb-msgs]
+mag_manip:
+  ubuntu:
+    bionic:
+      [ros-melodic-mag-manip]
+    focal:
+      [ros-noetic-mag-manip]
+mag_calculator:
+  ubuntu:
+    bionic:
+      [ros-melodic-mag-calculator]
+    focal:
+      [ros-noetic-mag-calculator]
+mag_rviz:
+  ubuntu:
+    bionic:
+      [ros-melodic-mag-rviz]
+    focal:
+      [ros-noetic-mag-rviz]

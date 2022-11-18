@@ -1,0 +1,869 @@
+---
+System_Name: "MINIMAG: SN E090094"
+Coil_1:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+    - Src_3
+    - Src_4
+    - Src_5
+    - Src_6
+    - Src_7
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+  Src_3:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - 0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - 0.01249
+      - -0.019623
+  Src_4:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.4385607535357341
+      - 0
+      - 0.8987015441503198
+    Source_Position:
+      - -0.024743
+      - 0
+      - -0.01182
+  Src_5:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - -0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - -0.01249
+      - -0.019623
+  Src_6:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - -0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - -0.024536
+      - -0.011753
+  Src_7:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - -0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - -0.013143
+      - -0.02042
+Coil_List:
+  - Coil_0
+  - Coil_1
+  - Coil_2
+  - Coil_3
+  - Coil_4
+  - Coil_5
+  - Coil_6
+  - Coil_7
+Coil_0:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+    - Src_3
+    - Src_4
+    - Src_5
+    - Src_6
+    - Src_7
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+  Src_3:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - 0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - 0.01249
+      - -0.019623
+  Src_4:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.4385607535357341
+      - 0
+      - 0.8987015441503198
+    Source_Position:
+      - -0.024743
+      - 0
+      - -0.01182
+  Src_5:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - -0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - -0.01249
+      - -0.019623
+  Src_6:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - -0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - -0.024536
+      - -0.011753
+  Src_7:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - -0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - -0.013143
+      - -0.02042
+Coil_2:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+    - Src_3
+    - Src_4
+    - Src_5
+    - Src_6
+    - Src_7
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+  Src_3:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - 0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - 0.01249
+      - -0.019623
+  Src_4:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.4385607535357341
+      - 0
+      - 0.8987015441503198
+    Source_Position:
+      - -0.024743
+      - 0
+      - -0.01182
+  Src_5:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - -0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - -0.01249
+      - -0.019623
+  Src_6:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - -0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - -0.024536
+      - -0.011753
+  Src_7:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - -0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - -0.013143
+      - -0.02042
+Coil_3:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+    - Src_3
+    - Src_4
+    - Src_5
+    - Src_6
+    - Src_7
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+  Src_3:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - -0.5213881151593012
+      - 0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - 0.01249
+      - -0.019623
+  Src_4:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.4385607535357341
+      - 0
+      - 0.8987015441503198
+    Source_Position:
+      - -0.024743
+      - 0
+      - -0.01182
+  Src_5:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - -0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - -0.01249
+      - -0.019623
+  Src_6:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - -0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - -0.024536
+      - -0.011753
+  Src_7:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - -0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - -0.013143
+      - -0.02042
+Coil_4:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+    - Src_3
+    - Src_4
+    - Src_5
+    - Src_6
+    - Src_7
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+  Src_3:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - 0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - 0.01249
+      - -0.019623
+  Src_4:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - -0.4385607535357341
+      - 0
+      - 0.8987015441503198
+    Source_Position:
+      - -0.024743
+      - 0
+      - -0.01182
+  Src_5:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - -0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - -0.01249
+      - -0.019623
+  Src_6:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - -0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - -0.024536
+      - -0.011753
+  Src_7:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - -0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - -0.013143
+      - -0.02042
+Coil_5:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+    - Src_3
+    - Src_4
+    - Src_5
+    - Src_6
+    - Src_7
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+  Src_3:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - 0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - 0.01249
+      - -0.019623
+  Src_4:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.4385607535357341
+      - 0
+      - 0.8987015441503198
+    Source_Position:
+      - -0.024743
+      - 0
+      - -0.01182
+  Src_5:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - -0.5213881151593012
+      - -0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - -0.01249
+      - -0.019623
+  Src_6:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - -0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - -0.024536
+      - -0.011753
+  Src_7:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - -0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - -0.013143
+      - -0.02042
+Coil_6:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+    - Src_3
+    - Src_4
+    - Src_5
+    - Src_6
+    - Src_7
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+  Src_3:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - 0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - 0.01249
+      - -0.019623
+  Src_4:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.4385607535357341
+      - 0
+      - 0.8987015441503198
+    Source_Position:
+      - -0.024743
+      - 0
+      - -0.01182
+  Src_5:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - -0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - -0.01249
+      - -0.019623
+  Src_6:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - -7.153112272187927e-05
+      - -0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - -0.024536
+      - -0.011753
+  Src_7:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - -0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - -0.013143
+      - -0.02042
+Coil_7:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+    - Src_3
+    - Src_4
+    - Src_5
+    - Src_6
+    - Src_7
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+  Src_3:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - 0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - 0.01249
+      - -0.019623
+  Src_4:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.4385607535357341
+      - 0
+      - 0.8987015441503198
+    Source_Position:
+      - -0.024743
+      - 0
+      - -0.01182
+  Src_5:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -0.5213881151593012
+      - -0.5212181157738563
+      - 0.6756375575408624
+    Source_Position:
+      - -0.012822
+      - -0.01249
+      - -0.019623
+  Src_6:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - -0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - -0.024536
+      - -0.011753
+  Src_7:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - 0.5215397939396682
+      - -0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - -0.013143
+      - -0.02042
+Workspace_Dimensions:
+  -
+    - -99e99
+    - 99e99
+  -
+    - -99e99
+    - 99e99
+  -
+    - -99e99
+    - 99e99

@@ -1,0 +1,4 @@
+name: CardioMag
+forward_model_linear:
+  type: mpem
+  filename: CardioMag_CalibrationCube_03-04-19.yaml 

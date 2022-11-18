@@ -1,0 +1,15 @@
+<launch>  
+    <node name="backward_model" pkg="mag_calculator" type="backward_model">
+        <param name="system_name" type="string" value="magbed" />
+        <param name="calibration_path" type="string" value="$(find mag_manip)/cal/MagBedcalibrated_param220519.yaml" />
+        <param name="max_field_intensity_T" type="double" value="0.035" />
+    </node>
+
+    <node name="forward_model" pkg="mag_calculator" type="forward_model">
+        <remap from="forward_model/dynamic_currents" to="backward_model/desired_currents"/>
+        <param name="calibration_path" type="string" value="$(find mag_manip)/cal/MagBedcalibrated_param220519.yaml" />
+    </node>
+
+    <node pkg="tf" type="static_transform_publisher" name="mns_broadcaster" args="0 0 -0.003 0 0 0 1 world mns 100" />
+    <node pkg="rviz" name="rviz" type='rviz' args="-d $(find mag_calculator)/rviz/demo_mag_magbed.rviz" />
+</launch>

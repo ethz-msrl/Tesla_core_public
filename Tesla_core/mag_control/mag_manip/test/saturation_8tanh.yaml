@@ -1,0 +1,25 @@
+saturation_functions:
+  coil_0:
+    type: tanh
+    params: [16.0, 0.0625]
+  coil_1:
+    type: tanh
+    params: [16.0, 0.0625]
+  coil_2:
+    type: tanh
+    params: [16.0, 0.0625]
+  coil_3:
+    type: tanh
+    params: [16.0, 0.0625]
+  coil_4:
+    type: tanh
+    params: [16.0, 0.0625]
+  coil_5:
+    type: tanh
+    params: [16.0, 0.0625]
+  coil_6:
+    type: tanh
+    params: [16.0, 0.0625]
+  coil_7:
+    type: tanh
+    params: [16.0, 0.0625]

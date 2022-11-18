@@ -1,0 +1,155 @@
+#
+# Tesla - A ROS-based framework for performing magnetic manipulation
+#
+# Copyright 2018 Multi Scale Robotics Lab
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+Coil_1:
+  Src_1:
+    B_Coeff:
+      - -9.441575305371433e-06
+    A_Coeff: ~
+    Source_Direction:
+      - -0.1068156107572421
+      - 0.9150583613746841
+      - 0.3889198125292792
+    Source_Position:
+      - 0.1533119948744056
+      - 0.04995844909623166
+      - -0.1361308331654912
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+  Src_0:
+    B_Coeff:
+      - 4.982871521738528e-05
+    A_Coeff: ~
+    Source_Direction:
+      - -0.4623624565038884
+      - 0.7419673182140499
+      - 0.4854950643605568
+    Source_Position:
+      - -0.06561370733048333
+      - -0.009354380325696313
+      - -0.2167687210748234
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 6.456072748164898e-06
+    Source_Direction:
+      - -0.5653919854228078
+      - 0.4376717732232576
+      - 0.6991246825466738
+    Source_Position:
+      - -0.1265539987422789
+      - 0.07422176962845425
+      - -0.07122469334642188
+Coil_List:
+  - Coil_0
+  - Coil_1
+  - Coil_2
+System_Name: MagBed
+Coil_0:
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 8.210645929327082e-06
+    Source_Direction:
+      - -0.04677901963864022
+      - -0.6176671200884667
+      - 0.7850471655974456
+    Source_Position:
+      - 0.001440387852770359
+      - -0.149351723515506
+      - -0.07583294977963473
+  Src_1:
+    A_Coeff: ~
+    Source_Direction:
+      - -0.5275246039986276
+      - -0.8495325878954986
+      - 0.003489320194015157
+    Source_Position:
+      - 0.04475850472396833
+      - 0.02755485061982063
+      - -0.2423574471528964
+    B_Coeff:
+      - 9.818761561028794e-05
+  Src_0:
+    B_Coeff:
+      - -6.114785377575042e-05
+    Source_Position:
+      - -0.04670349294721032
+      - 0.1333080010475123
+      - -0.2189813436141732
+    A_Coeff: ~
+    Source_Direction:
+      - -0.8157522875766938
+      - -0.5656102944049799
+      - -0.1209677694885631
+Coil_2:
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 5.569244104441757e-06
+    Source_Direction:
+      - 0.4035024055014699
+      - 0.8023639573216691
+      - -0.4397702783309287
+    Source_Position:
+      - 0.03652809932077782
+      - -0.1402235563661319
+      - -0.1187333090978043
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 1.844732573802817e-05
+    Source_Direction:
+      - 0.2711782495146318
+      - 0.04790960111149752
+      - 0.9613360718325281
+    Source_Position:
+      - 0.1438366842041884
+      - 0.09324915075927848
+      - -0.1079561546820961
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - -2.611724273794364e-06
+    Source_Direction:
+      - -0.8155209959390143
+      - -0.09782279583052964
+      - 0.5704001211283976
+    Source_Position:
+      - -0.1085824731045246
+      - 0.098823812331891
+      - -0.08434571342468142
+Workspace_Dimensions:
+  -
+    - -0.1
+    - 0.1
+  -
+    - -0.1
+    - 0.1
+  -
+    - 0.02
+    - 0.22

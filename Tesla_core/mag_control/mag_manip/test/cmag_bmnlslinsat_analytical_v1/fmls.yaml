@@ -1,0 +1,10 @@
+name: CardioMag
+type: forward_model_linear_saturation
+saturations_filename: cmag_sat_erf_v1.yaml 
+forward_model_linear:
+  type: mpem
+  filename: CardioMag_CalibrationCube_03-04-19.yaml
+
+# this should identify the config file version
+# for future changes
+version: 1.0

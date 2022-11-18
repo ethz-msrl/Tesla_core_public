@@ -1,0 +1,48 @@
+<launch>  
+    <node name="backward_model" pkg="mag_calculator" type="backward_model">
+        <param name="system_name" type="string" value="magbed" />
+        <param name="calibration_path" type="string" value="$(find magbed_calibration)/cal/MagBedcalibrated_param220519.yaml" />
+        <param name="max_field_intensity_T" type="double" value="0.100" />
+        <remap from="/backward_model/currents" to="/magbed/target_currents"/>
+    </node>
+
+    <node pkg="tf" type="static_transform_publisher" name="mns_broadcaster" args="0 0 0.075 0 0 -0.7071068 0.7071068 world mns 100" />
+    <node pkg="rviz" name="rviz" type='rviz' args="-d $(find mag_calculator)/rviz/demo_mag_magbed.rviz" />
+
+
+    <node name="magbed_controller" pkg="magbed_controller" type="magbed_node" />
+
+    <!-- <node pkg="rviz" name="rviz" type='rviz' args="-d $(find magbed_controller)/rviz/magbed_calibration.rviz" /> -->
+
+    <node name="stereo_cam" pkg="basler_camera" type="basler_multicamera_node" output="screen">
+        <rosparam command="load" file="$(find magbed_cameras)/config/stereo_cal_29042019.yaml" />
+    </node>
+
+    <node name="cam_1_tracker" pkg="color_tracker" type="color_tracker_node.py" output="screen">
+        <remap from="/cam_1_tracker/image_in" to="/stereo_cam/cam_1/image_raw" />
+        <rosparam command="load" file="$(find color_tracker)/config/orange.yaml" />
+    </node>
+
+    <node name="cam_2_tracker" pkg="color_tracker" type="color_tracker_node.py" output="screen">
+        <remap from="/cam_2_tracker/image_in" to="/stereo_cam/cam_2/image_raw" />
+        <rosparam command="load" file="$(find color_tracker)/config/orange.yaml" />
+    </node>
+
+    <node name="triangulation" pkg="multicam" type="triangulation_node.py" output="screen" >
+        <rosparam command="load" file="$(find magbed_cameras)/cal/stereo_cal_29042019.yaml" ns="/stereo_cam"/> <!-- <camera parameters used by cam_world_broadcaster_node -->
+        <param name="tracker_name_1" type="string" value="cam_1_tracker" />
+        <param name="tracker_name_2" type="string" value="cam_2_tracker" />
+        <!-- <param name="sync_time" type="double" value="2.0"/> -->
+    </node>
+
+    <node pkg="multicam" type="cam_world_broadcaster_node.py" name="cam_world_broadcaster" />
+    <node pkg="cal_cube_lego" type="calibration_cube.py" name="cal_cube_lego" respawn="false" output="screen">
+        <param name="serialPort" type="string" value="/dev/ttyACM0" />
+        <param name="baudrate" type="int" value="3000000" />
+        <param name="fifoDepth" type="int" value="1" />
+        <param name="logEnable" type="int" value="0" />
+        <param name="geometryFile" type="string" value= "$(find cal_cube_lego)/config/geometry/cube_22cm.txt"/>
+    </node>
+    <node pkg="tf" type="static_transform_publisher" name="map_broadcaster" args="0 0 0 0 0 0 1 world calibration_cube 100" />
+
+</launch>

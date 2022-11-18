@@ -1,0 +1,34 @@
+ARG TC_VERSION=3.0.0
+
+FROM ghcr.io/ethz-msrl/tesla-core-melodic:$TC_VERSION
+
+LABEL maintainer="Samuel Charreyron <samuelch@ethz.ch>"
+
+ARG NB_USER="sam"
+ARG NB_UID="1000"
+ARG NB_GID="100"
+
+# Fix DL4006
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+RUN apt-get update \
+&& apt-get install --no-install-recommends -yq wget locales fonts-liberation python-pip \
+&&  rm -rf /var/lib/apt/lists/*
+
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
+    locale-gen
+
+COPY docker/jupyter-requirements.txt requirements.txt
+
+# we need to freeze the version of pyrsistent because the newest version requires python 3
+RUN pip install --no-cache-dir pyrsistent==0.16.1 jupyterlab numpy scipy matplotlib
+#RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 8888
+
+# for now copy MPEM calibration files to a folder easily accessible from
+# jupyter lab. Later we can add other types of model calibrations there
+RUN mkdir "$HOME"/work && ln -s /tc_ws/src/Tesla_core/mag_control/mpem/cal "$HOME"/work/models
+WORKDIR $HOME/work
+
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]

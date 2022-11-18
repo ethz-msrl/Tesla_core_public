@@ -1,0 +1,65 @@
+---
+name: Lint Code Base
+
+on:
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    # Name the Job
+    name: Lint Code Base
+    # Set the agent to run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.CLANG_FORMAT_PAT }}
+      - name: run clang-format
+        uses: DoozyX/clang-format-lint-action@v0.11
+        with:
+          clangFormatVersion: 6
+          inplace: true
+      - name: commit clang-format changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: MSRL GitHub Robot
+          author_email: msrl.gh-robot@ethz.ch
+          message: "Commiting clang-format changes"
+      - name: cpplint
+        uses: reviewdog/action-cpplint@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          flags: --linelength=100
+          level: warning
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - name: flake8
+        uses: reviewdog/action-flake8@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: black
+        uses: reviewdog/action-black@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          level: warning
+      - name: markdownlint
+        uses: reviewdog/action-markdownlint@v0.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: hadolint
+        uses: reviewdog/action-hadolint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          level: warning
+      - name: yamllint
+        uses: reviewdog/action-yamllint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

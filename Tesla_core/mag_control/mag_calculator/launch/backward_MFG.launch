@@ -1,0 +1,10 @@
+<launch>
+    <node name="backward_mfg" pkg="mag_calculator" type="backward_model">
+        <param name="system_name" type="string" value="MFG" />
+        <param name="calibration_path" type="string" value="$(find mpem)/cal/MINIMAG_E090094.yaml" />
+        <param name="calibration_type" type="string" value="mpem_L2" />
+        <param name="max_field_intensity" type="double" value="0.02" />
+    </node>
+
+    <node pkg="tf" type="static_transform_publisher" name="mns_broadcaster" args="0 0 0 0 0 0 1 world mns 100" />
+</launch>

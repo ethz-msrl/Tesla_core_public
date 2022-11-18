@@ -1,0 +1,2 @@
+calibration_path: "$(find mag_manip)/models/cmag_bmnlsmpem_v1/params.yaml"
+calibration_type: "nls"

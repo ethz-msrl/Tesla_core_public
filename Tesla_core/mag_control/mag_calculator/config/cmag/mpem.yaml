@@ -1,0 +1,2 @@
+calibration_path: "$(find mpem)/cal/C_Mag_Calibration_06-25-2015.yaml" 
+calibration_type: "mpem_L2"

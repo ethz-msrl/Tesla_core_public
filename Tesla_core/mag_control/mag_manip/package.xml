@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>mag_manip</name>
+  <version>4.0.0</version>
+  <description>Provides an interface for performing magnetic manipulation</description>
+  
+  <maintainer email="fheemeyer@ethz.ch">Florian Heemeyer</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+
+  <depend>tsc_utils</depend>
+  <depend>mag_msgs</depend>
+  <depend>yaml-cpp</depend>
+  <depend>eigen</depend>
+  <depend>swig</depend>
+  <depend>mpem</depend>
+  <depend>mag_tensorflow</depend>
+  <depend>roscpp</depend>
+  <depend>libceres-dev</depend>
+  <depend>benchmark</depend>
+  <depend>rostest</depend>
+  <test_depend>code_coverage</test_depend>
+</package>

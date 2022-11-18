@@ -1,0 +1,4 @@
+int32[320] currents_mA
+bool direct
+---
+uint8 ret_code

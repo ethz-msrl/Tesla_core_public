@@ -1,0 +1,52 @@
+FROM osrf/ros:noetic-desktop-full
+
+LABEL maintainer="Samuel Charreyron <samuelch@ethz.ch>"
+
+RUN apt-get update && apt-get install --no-install-recommends -y swig wget cmake \
+        && rm -rf /var/lib/apt/lists/*
+
+# install catkin python tools
+RUN apt-get update && apt-get install --no-install-recommends -y python3-catkin-tools python3-rosdep python3-wstool \
+        && rm -rf /var/lib/apt/lists/*
+
+# this is not installed in ubuntu 20.04
+RUN apt-get update && apt-get install --no-install-recommends -y libtool \
+        && rm -rf /var/lib/apt/lists/*
+
+# this part is needed since the the current version of python3-catkin-tools
+# is broken
+RUN apt-get update && apt-get install -y --no-install-recommends python3-catkin-lint python3-pip \
+        && rm -rf /var/lib/apt/lists/*
+RUN pip3 install --no-cache-dir osrf-pycommon
+
+RUN mkdir scripts
+COPY docker/scripts/init_rosdep.sh scripts
+RUN scripts/init_rosdep.sh
+
+COPY docker/scripts/install_dependencies.sh scripts
+RUN scripts/install_dependencies.sh
+
+COPY . /tc_ws/src/Tesla_core
+WORKDIR /tc_ws
+
+COPY docker/scripts/init_catkin.sh /scripts/
+RUN /scripts/init_catkin.sh
+
+COPY docker/scripts/inject_rosinstall_credentials.sh /scripts/
+ARG GITHUB_TOKEN
+RUN /scripts/inject_rosinstall_credentials.sh "$GITHUB_TOKEN" /tc_ws/src/Tesla_core/dependencies.rosinstall
+
+WORKDIR /tc_ws/src
+RUN wstool init && \
+        wstool merge Tesla_core/dependencies.rosinstall && \
+        wstool update
+
+WORKDIR /tc_ws
+COPY docker/scripts/install_rosdep.sh /scripts
+RUN /scripts/install_rosdep.sh
+
+COPY docker/scripts/catkin_build.sh /scripts
+RUN /scripts/catkin_build.sh 8
+
+COPY docker/scripts/entrypoint.sh /scripts
+ENTRYPOINT ["/scripts/entrypoint.sh"]

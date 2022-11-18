@@ -1,0 +1,5 @@
+system_name: dummy
+num_electromagnets: 3
+max_currents: [8, 8, 8]
+coil_resistances: [8, 8, 8]
+max_power: 15000

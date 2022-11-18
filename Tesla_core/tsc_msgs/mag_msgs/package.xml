@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>mag_msgs</name>
+  <version>4.0.0</version>
+  <description>Message definitions for magnetic manipulation.</description>
+
+  <maintainer email="fheemeyer@ethz.ch">Florian Heemeyer</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+
+  <build_depend>std_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+
+  <build_depend>message_generation</build_depend>
+  <depend>message_runtime</depend>
+</package>

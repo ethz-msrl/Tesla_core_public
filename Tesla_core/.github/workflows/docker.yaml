@@ -1,0 +1,118 @@
+name: dockerize
+
+on: 
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  melodic:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set release version
+      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/v}" >> $GITHUB_ENV
+    - name: Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.8.0
+      with:
+        access_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Login to package registry
+      uses: docker/login-action@v1
+      with:
+        username: msrl-gh-bot
+        password: ${{ secrets.DOCKERIZE_PAT }}
+        registry: ghcr.io
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+    - name: Build container image
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        context: .
+        file: docker/Dockerfile.melodic
+        tags: ghcr.io/ethz-msrl/tesla-core-melodic:${{ env.RELEASE_VERSION }}
+        build-args: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+  noetic:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set release version
+      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/v}" >> $GITHUB_ENV
+    - name: Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.8.0
+      with:
+        access_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Login to package registry
+      uses: docker/login-action@v1
+      with:
+        username: msrl-gh-bot
+        password: ${{ secrets.DOCKERIZE_PAT }}
+        registry: ghcr.io
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+    - name: Build container image
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        context: .
+        file: docker/Dockerfile.noetic
+        tags: ghcr.io/ethz-msrl/tesla-core-noetic:${{ env.RELEASE_VERSION }}
+        build-args: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+  jupyter_melodic:
+    runs-on: ubuntu-latest
+    needs: melodic
+    steps:
+    - name: Set release version
+      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/v}" >> $GITHUB_ENV
+    - name: Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.8.0
+      with:
+        access_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Login to package registry
+      uses: docker/login-action@v1
+      with:
+        username: msrl-gh-bot
+        password: ${{ secrets.DOCKERIZE_PAT }}
+        registry: ghcr.io
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+    - name: Build container image
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        context: .
+        file: docker/Dockerfile-jupyter.melodic
+        tags: ghcr.io/ethz-msrl/tesla-core-jupyter-melodic:${{ env.RELEASE_VERSION }}
+        build-args: |
+          GITHUB_TOKEN=${{ secrets.DOCKERIZE_PAT }}
+          TC_VERSION=${{ env.RELEASE_VERSION }}
+  jupyter_noetic:
+    runs-on: ubuntu-latest
+    needs: noetic
+    steps:
+    - name: Set release version
+      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/v}" >> $GITHUB_ENV
+    - name: Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.8.0
+      with:
+        access_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Login to package registry
+      uses: docker/login-action@v1
+      with:
+        username: msrl-gh-bot
+        password: ${{ secrets.DOCKERIZE_PAT }}
+        registry: ghcr.io
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+    - name: Build container image
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        context: .
+        file: docker/Dockerfile-jupyter.noetic
+        tags: ghcr.io/ethz-msrl/tesla-core-jupyter-noetic:${{ env.RELEASE_VERSION }}
+        build-args: | 
+          GITHUB_TOKEN=${{ secrets.DOCKERIZE_PAT }}
+          TC_VERSION=${{ env.RELEASE_VERSION }}

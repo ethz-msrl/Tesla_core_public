@@ -1,0 +1,13 @@
+<launch>   
+    <!-- For convenience since there is just one current, we remap the desired currents to a root topic -->
+    <remap from="/backward_cmag/currents" to="/desired_currents" />
+
+    <arg name="model_type" default="mpem" doc="mpem (default): use the mpem model, mpem_sat: use the nls model with saturated mpem'."/>
+
+    <node name="backward_cmag" pkg="mag_calculator" type="backward_model" output="log">
+        <rosparam command="load" subst_value="True" file="$(find mag_calculator)/config/cmag/$(arg model_type).yaml" />
+        <param name="is_field_inverted" type="bool" value="true" />
+        <param name="max_field_intensity" type="double" value="0.1" />
+    </node>
+
+</launch>

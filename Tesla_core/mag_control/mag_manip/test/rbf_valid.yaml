@@ -1,0 +1,86 @@
+name: Dummy
+vfields:
+  coil_0:
+    kernel: gaussian
+    shape_param: 0.1
+    nodes:
+      -
+        position: [0, 0, 0]
+        value: [1, 0, 0]
+      -
+        position: [0, 0, 1]
+        value: [1, 0, 0]
+      -
+        position: [0, 1, 0]
+        value: [1, 0, 0]
+      -
+        position: [0, 1, 1]
+        value: [1, 0, 0]
+      -
+        position: [1, 0, 0]
+        value: [1, 0, 0]
+      -
+        position: [1, 0, 1]
+        value: [1, 0, 0]
+      -
+        position: [1, 1, 0]
+        value: [1, 0, 0]
+      -
+        position: [1, 1, 1]
+        value: [1, 0, 0]
+  coil_1:
+    kernel: gaussian
+    shape_param: 0.1
+    nodes:
+      -
+        position: [0, 0, 0]
+        value: [0, 1, 0]
+      -
+        position: [0, 0, 1]
+        value: [0, 1, 0]
+      -
+        position: [0, 1, 0]
+        value: [0, 1, 0]
+      -
+        position: [0, 1, 1]
+        value: [0, 1, 0]
+      -
+        position: [1, 0, 0]
+        value: [0, 1, 0]
+      -
+        position: [1, 0, 1]
+        value: [0, 1, 0]
+      -
+        position: [1, 1, 0]
+        value: [0, 1, 0]
+      -
+        position: [1, 1, 1]
+        value: [0, 1, 0]
+  coil_2:
+    kernel: gaussian
+    shape_param: 0.1
+    nodes:
+      -
+        position: [0, 0, 0]
+        value: [0, 0, 1]
+      -
+        position: [0, 0, 1]
+        value: [0, 0, 1]
+      -
+        position: [0, 1, 0]
+        value: [0, 0, 1]
+      -
+        position: [0, 1, 1]
+        value: [0, 0, 1]
+      -
+        position: [1, 0, 0]
+        value: [0, 0, 1]
+      -
+        position: [1, 0, 1]
+        value: [0, 0, 1]
+      -
+        position: [1, 1, 0]
+        value: [0, 0, 1]
+      -
+        position: [1, 1, 1]
+        value: [0, 0, 1]

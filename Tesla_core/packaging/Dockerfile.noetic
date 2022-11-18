@@ -1,0 +1,20 @@
+ARG TC_VERSION=3.1.0
+
+# here we use as a base the docker image that is built on 
+# each release of tesla core
+# An alternative would be to replicate the environment 
+# needed to build the packages here since the docker image
+# will be frozen at a given version
+FROM ghcr.io/ethz-msrl/tesla-core-noetic:$TC_VERSION
+
+LABEL maintainer="Samuel Charreyron <samuelch@ethz.ch>"
+
+RUN apt-get update \
+        && apt-get install --no-install-recommends -yq python3-bloom=0.10.7-100 fakeroot=1.24-1 dh-make=2.201903 \
+        && rm -rf /var/lib/apt/lists/*
+
+COPY packaging/rosdep.yaml /rosdep.yaml
+COPY packaging/build-packages.sh /tc_ws/
+COPY packaging/50-tc-packages.list /etc/ros/rosdep/sources.list.d/
+RUN rm -rf /tc_ws/src/Tesla_core
+COPY . /tc_ws/src/Tesla_core

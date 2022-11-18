@@ -1,0 +1,29 @@
+saturation_functions:
+  coil_0:
+    type: erf
+    params: [16.97267286,  0.05221493]
+  coil_1:
+    type: erf
+    params: [18.64318911,  0.04753623]
+  coil_2:
+    type: erf
+    params: [16.84598982,  0.05260759]
+  coil_3:
+    type: erf
+    params: [19.12008276,  0.04635058]
+  coil_4:
+    type: erf
+    params: [18.29851536,  0.04843163]
+  coil_5:
+    type: erf
+    params: [20.08286992,  0.0441285]
+  coil_6:
+    type: erf
+    params: [19.9880176 ,  0.04433791]
+  coil_7:
+    type: erf
+    params: [18.83446082,  0.04705348]
+  
+# this should identify the config file version
+# for future changes
+version: 1.0

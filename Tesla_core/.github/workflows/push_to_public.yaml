@@ -1,0 +1,34 @@
+name: push_to_public_repo
+
+on: 
+  workflow_dispatch:
+
+jobs:  
+  clone-tesla-core-and-push-to-tesla-core-public:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Tesla_core
+      uses: actions/checkout@v3
+      with:
+        repository: ethz-msrl/Tesla_core
+        path: Tesla_core
+        lfs: true
+    - name: Checkout Tesla_core_public
+      uses: actions/checkout@v3
+      with:
+        token: ${{secrets.TESLA_CORE_PUBLIC_READ_AND_WRITE}}
+        repository: ethz-msrl/Tesla_core_public
+        path: Tesla_core_public
+        lfs: true
+    - name: Copy Tesla_core to Tesla_core_public
+      run: |
+        rsync -av --progress Tesla_core Tesla_core_public --exclude .git
+    - name: Commit   
+      uses: EndBug/add-and-commit@v7
+      with:
+        author_name: florianheemeyer
+        author_email: fheemeyer@ethz.ch
+        message: "Commiting new Release to Tesla_core_public"
+        push: true
+        cwd: './Tesla_core_public'
+

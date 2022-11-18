@@ -1,0 +1,5 @@
+system_name: Navion_2
+num_electromagnets: 3
+max_currents: [35, 35, 35]
+coil_resistances: [7.5, 7.5, 7.5]
+max_power: 32000

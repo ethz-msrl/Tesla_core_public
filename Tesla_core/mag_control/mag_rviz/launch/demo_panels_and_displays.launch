@@ -1,0 +1,11 @@
+<!-- Launch rviz with pannel example -->
+<launch>
+    
+    <node pkg="rviz" name="rviz" type='rviz' args="-d $(find mag_rviz)/rviz/demo_panels_and_displays.rviz" />
+
+    <node pkg="tf" type="static_transform_publisher" name="mns_broadcaster" args="0 0 0 0 0 0 1 world mns 100" />
+    <node pkg="tf" type="static_transform_publisher" name="x_broadcaster" args="0.03 0 0.0 0 0 0  mns x 100" />
+    <node pkg="tf" type="static_transform_publisher" name="y_broadcaster" args="0.0 0.05 0.0 0 1.57 0 mns y 100" />
+
+   
+</launch>

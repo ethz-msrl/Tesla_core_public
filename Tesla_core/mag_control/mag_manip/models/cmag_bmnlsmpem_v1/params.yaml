@@ -1,0 +1,18 @@
+name: CardioMag
+type: backward_model_nls
+forward_model:
+  type: mpem
+  filename: CardioMag_CalibrationCube_03-04-19.yaml 
+nls:
+  # optional params to define parameters of the nonlinear least squares
+  do_print_summary: false
+  do_minimize_currents: true
+  do_cache_position: true
+  weight_currents: 1e-12
+  max_field_dist: 50e-6
+  max_gradient_dist: 1e-3
+  do_throw_exceptions: true
+
+# this should identify the config file version
+# for future changes
+version: 1.0

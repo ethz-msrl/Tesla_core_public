@@ -1,0 +1,139 @@
+---
+System_Name: "Navion_1"
+Coil_1:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+Coil_List:
+  - Coil_0
+  - Coil_1
+  - Coil_2
+Coil_0:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+Coil_2:
+  Src_1:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.5215397939396682
+      - 0.5213097940305411
+      - 0.6754497331298632
+    Source_Position:
+      - 0.012963
+      - 0.013143
+      - -0.02042
+  Source_List:
+    - Src_0
+    - Src_1
+    - Src_2
+  Src_0:
+    A_Coeff: ~
+    B_Coeff:
+      - 0
+    Source_Direction:
+      - 0.438548735533921
+      - 1.232096447500499e-06
+      - 0.898707408759982
+    Source_Position:
+      - 0.024066
+      - -0.00023925
+      - -0.011789
+  Src_2:
+    A_Coeff: ~
+    B_Coeff:
+      - 1
+    Source_Direction:
+      - -7.153112272187927e-05
+      - 0.4385607524137419
+      - 0.8987015418511261
+    Source_Position:
+      - 0.00036858
+      - 0.024536
+      - -0.011753
+Workspace_Dimensions:
+  -
+    - -99e99
+    - 99e99
+  -
+    - -99e99
+    - 99e99
+  -
+    - -99e99
+    - 99e99

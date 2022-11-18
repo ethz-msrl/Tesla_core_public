@@ -1,0 +1,17 @@
+ARG TC_VERSION=3.1.0
+
+# here we use as a base the docker image that is built on 
+# each release of tesla core
+# An alternative would be to replicate the environment 
+# needed to build the packages here since the docker image
+# will be frozen at a given version
+FROM ghcr.io/ethz-msrl/tesla-core-noetic:$TC_VERSION
+
+LABEL maintainer="Samuel Charreyron <samuelch@ethz.ch>"
+
+RUN apt-get update \
+        && apt-get install --no-install-recommends -yq python3-catkin-pkg doxygen python3-sphinx \
+        python3-sphinx-rtd-theme python3-numpy \
+        && rm -rf /var/lib/apt/lists/*
+RUN rm -rf /tc_ws/src/Tesla_core
+COPY . /tc_ws/src/Tesla_core

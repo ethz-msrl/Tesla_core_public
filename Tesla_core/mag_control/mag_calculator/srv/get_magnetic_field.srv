@@ -1,0 +1,4 @@
+float32[3] position
+float32[8] currents
+---
+float32[3] mag_field
