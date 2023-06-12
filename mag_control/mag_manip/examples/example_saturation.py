@@ -59,8 +59,8 @@ model = mag_manip.ForwardModelSaturation()
 model.setLinearModel(lin_model)
 model.setSaturationFunctions(saturations)
 
-p = np.zeros((3,), np.float)
-currents = 8 * np.ones((8,), np.float)
+p = np.zeros((3,), np.float64)
+currents = 8 * np.ones((8,), np.float64)
 
 field = model.computeFieldFromCurrents(p, currents)
 

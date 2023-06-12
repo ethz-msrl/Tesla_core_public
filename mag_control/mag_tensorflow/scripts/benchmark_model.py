@@ -64,7 +64,7 @@ class Benchmark(object):
         self.sess.close()
 
     def compute_field(self):
-        currents = np.zeros((1, 8), np.float)
+        currents = np.zeros((1, 8), np.float64)
         field_out = self.sess.run(
             "G_2/13_conv/BiasAdd:0", {"Placeholder:0": normalize_currents(currents)}
         )

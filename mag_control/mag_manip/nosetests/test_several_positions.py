@@ -51,6 +51,6 @@ def test_computeFieldsFromCurrents():
     pkg_path = r.get_path("mag_manip")
     cal_path = path.join(pkg_path, "test", "OctoMag_Calibration.yaml")
     model = f.create("mpem", cal_path)
-    positions = np.zeros((3, 10), np.float)
-    currents = np.zeros((8,), np.float)
+    positions = np.zeros((3, 10), np.float64)
+    currents = np.zeros((8,), np.float64)
     model.computeFieldsFromCurrents(positions, currents)

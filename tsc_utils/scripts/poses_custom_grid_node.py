@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from __future__ import division
 
@@ -6,8 +7,6 @@ from builtins import range
 
 import rospy
 from geometry_msgs.msg import Point, Pose, PoseArray
-
-# coding: utf-8
 
 # Tesla - A ROS-based framework for performing magnetic manipulation
 
@@ -69,7 +68,6 @@ if __name__ == "__main__":
 
     poses_msg = PoseArray()
     poses_msg.header.frame_id = poses_list_frame
-    poses_msg.header.stamp = rospy.Time.now()
 
     rate = rospy.Rate(1)  # 1hz
 
@@ -88,6 +86,6 @@ if __name__ == "__main__":
                 poses_msg.poses.append(p)
 
     while not rospy.is_shutdown():
-
+        poses_msg.header.stamp = rospy.Time.now()
         poses_pub.publish(poses_msg)
         rate.sleep()

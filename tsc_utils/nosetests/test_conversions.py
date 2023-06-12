@@ -71,7 +71,7 @@ def test_point_msg_to_from_np():
 
 def test_quaternion_msg_to_from_np():
     v = rs.rand(3)
-    q = np.zeros((4,), np.float)
+    q = np.zeros((4,), np.float64)
     q[0:3] = v
     q[3] = np.linalg.norm(v)
 
@@ -135,7 +135,7 @@ def test_np_to_vector3_msg():
 
 def test_gradient5_to_np():
     g = Gradient5Vector(0, 0, 0, 0, 0)
-    assert_almost_equal(gradient5_to_np(g), np.zeros((5,), np.float))
+    assert_almost_equal(gradient5_to_np(g), np.zeros((5,), np.float64))
 
 
 def test_np_to_gradient5():

@@ -64,7 +64,7 @@ def elevation_azimuth_to_axis(elevation, azimuth, pole=1, primary=2):
         raise ValueError("Pole and Primary axis should be different")
     third = ({0, 1, 2} - {pole, primary}).pop()
 
-    ax = np.zeros((3,), np.float)
+    ax = np.zeros((3,), np.float64)
     ax[pole] = np.sin(elevation)
     ax[primary] = np.cos(elevation) * np.cos(azimuth)
     ax[third] = np.cos(elevation) * np.sin(azimuth)

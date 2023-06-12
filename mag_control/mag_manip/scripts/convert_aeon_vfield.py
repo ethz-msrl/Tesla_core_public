@@ -95,7 +95,7 @@ def parse_vfield_file(filename):
         props.min_z, props.max_z = (float(line) for line in line.split()[0:3])
 
         N = props.dim_x * props.dim_y * props.dim_z
-        data = np.zeros((N, 3), np.float)
+        data = np.zeros((N, 3), np.float64)
         for line in f.readlines():
             line_l = line.split()
             p = [float(line) for line in line_l[0:3]]

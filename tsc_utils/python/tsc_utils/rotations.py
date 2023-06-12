@@ -288,7 +288,7 @@ def quaternion_to_axis_angle(q):
     angle = 2 * np.arctan2(np.linalg.norm(q[0:3]), q[3])
 
     if angle < 1e-6:
-        axis = np.zeros((3,), np.float)
+        axis = np.zeros((3,), np.float64)
     else:
         axis = (1.0 / np.sin(angle / 2)) * q[0:3]
 
@@ -354,7 +354,7 @@ def quaternion_xyzw_to_wxyz(q):
         np.ndarray: q converted to [w, x, y, z]^T
 
     """
-    qn = np.zeros((4,), np.float)
+    qn = np.zeros((4,), np.float64)
     qn[0] = q[3]
     qn[1:] = q[0:3]
     return qn
@@ -370,7 +370,7 @@ def quaternion_wxyz_to_xyzw(q):
     Returns:
         np.ndarray q converted to [x, y, z, w]^T
     """
-    qn = np.zeros((4,), np.float)
+    qn = np.zeros((4,), np.float64)
     qn[3] = q[0]
     qn[0:3] = q[1:]
     return qn

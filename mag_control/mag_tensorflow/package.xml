@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>mag_tensorflow</name>
-  <version>4.0.0</version>
+  <version>4.0.1</version>
   <description>Provides a tensorflow interface for models</description>
 
   <maintainer email="fheemeyer@ethz.ch">Florian Heemeyer</maintainer>

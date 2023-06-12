@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>mpem</name>
-  <version>4.0.0</version>
+  <version>4.0.1</version>
   <description>Magnetic manipulation model based on linear combinations of multipole electromagnets</description>
 
   <maintainer email="fheemeyer@ethz.ch">Florian Heemeyer</maintainer>

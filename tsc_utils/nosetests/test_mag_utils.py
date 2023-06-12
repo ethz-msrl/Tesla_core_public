@@ -60,7 +60,7 @@ def test_grad5_to_grad33():
 
 def test_grad5_array_to_grad33_array():
     x = rs.rand(10, 5)
-    m = np.zeros((x.shape[0], 3, 3), np.float)
+    m = np.zeros((x.shape[0], 3, 3), np.float64)
 
     for i in range(x.shape[0]):
         m[i, :, :] = grad5_to_grad33(x[i, :])

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>mag_rod_msgs</name>
-  <version>4.0.0</version>
+  <version>4.0.1</version>
   <description>ROS messages for magnetic catheters</description>
   
   <maintainer email="fheemeyer@ethz.ch">Florian Heemeyer</maintainer>

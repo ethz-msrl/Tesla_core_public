@@ -82,29 +82,29 @@ def test_axis_angle_to_quaternion():
 
 def test_quaternion_from_two_vectors():
 
-    a = np.array([1, 0, 0], np.float)
-    b = np.array([1, 0, 0], np.float)
+    a = np.array([1, 0, 0], np.float64)
+    b = np.array([1, 0, 0], np.float64)
 
     q = rotations.quaternion_from_two_vectors(a, b)
 
-    assert_almost_equal(q, np.array([0, 0, 0, 1], np.float))
+    assert_almost_equal(q, np.array([0, 0, 0, 1], np.float64))
 
-    a = np.array([1, 0, 0], np.float)
-    b = np.array([0, 1, 0], np.float)
+    a = np.array([1, 0, 0], np.float64)
+    b = np.array([0, 1, 0], np.float64)
 
     q = rotations.quaternion_from_two_vectors(a, b)
 
-    assert_almost_equal(q, np.array([0, 0, np.sqrt(2) / 2, np.sqrt(2) / 2], np.float))
+    assert_almost_equal(q, np.array([0, 0, np.sqrt(2) / 2, np.sqrt(2) / 2], np.float64))
 
-    a = np.array([-1, 0, 0], np.float)
-    b = np.array([1, 0, 0], np.float)
+    a = np.array([-1, 0, 0], np.float64)
+    b = np.array([1, 0, 0], np.float64)
     q = rotations.quaternion_from_two_vectors(a, b)
-    assert_almost_equal(q, np.array([0, 0, 1, 0], np.float))
+    assert_almost_equal(q, np.array([0, 0, 1, 0], np.float64))
 
-    a = np.array([1, 1, 1], np.float)
-    b = np.array([-1, -1, -1], np.float)
+    a = np.array([1, 1, 1], np.float64)
+    b = np.array([-1, -1, -1], np.float64)
     q = rotations.quaternion_from_two_vectors(a, b)
-    assert_almost_equal(q, np.array([0, -np.sqrt(2) / 2, np.sqrt(2) / 2, 0], np.float))
+    assert_almost_equal(q, np.array([0, -np.sqrt(2) / 2, np.sqrt(2) / 2, 0], np.float64))
 
 
 def test_quaternion_to_rotation_matrix():
@@ -217,7 +217,7 @@ def test_jac_normalized_quaternion():
     dqn_dq = rotations.jac_normalized_quaternion(q)
     eps = 1e-5
     delm = eps * np.eye(4)
-    dqn_dq_fd = np.zeros((4, 4), np.float)
+    dqn_dq_fd = np.zeros((4, 4), np.float64)
     for i in range(4):
         q_ = q + delm[:, i]
         q_ /= np.linalg.norm(q_)
@@ -234,7 +234,7 @@ def test_jac_tangent_quaternion():
     T = rotations.quaternion_rotate_vector(q, rotations.ez())
     eps = 1e-4
     del_m = eps * np.eye(4)
-    dT_dq_fd = np.zeros((3, 4), np.float)
+    dT_dq_fd = np.zeros((3, 4), np.float64)
     for i in range(4):
         q_ = q + del_m[:, i]
         q_ /= np.linalg.norm(q_)
@@ -260,7 +260,7 @@ def test_jac_rotated_vector():
 
     eps = 1e-5
     delm = eps * np.eye(3)
-    dRu_dv_fd = np.zeros((3, 3), np.float)
+    dRu_dv_fd = np.zeros((3, 3), np.float64)
     for i in range(3):
         v_ = v + delm[:, i]
         th_ = np.linalg.norm(v_)

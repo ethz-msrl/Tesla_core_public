@@ -72,8 +72,8 @@ def test_forward_model_mpem():
     model = ForwardModelMPEM()
     model.setCalibrationFile(cal_path)
     assert model.isValid()
-    position = np.zeros((3,), np.float)
-    currents = np.ones((8,), np.float)
+    position = np.zeros((3,), np.float64)
+    currents = np.ones((8,), np.float64)
     field = model.computeFieldFromCurrents(position, currents)
     assert field.shape == (3, 1)
 
@@ -87,8 +87,8 @@ def test_backward_model_mpem_L2():
     model = BackwardModelMPEML2()
     model.setCalibrationFile(cal_path)
     assert model.isValid()
-    position = np.zeros((3,), np.float)
-    field = np.array([30e-3, 0, 0], np.float)
+    position = np.zeros((3,), np.float64)
+    field = np.array([30e-3, 0, 0], np.float64)
     currents = model.computeCurrentsFromField(position, field)
     assert currents.shape == (8, 1)
     f_model = ForwardModelMPEM()
@@ -116,8 +116,8 @@ def test_forward_model_mpem_saturation():
     sat_functions = [SaturationTanh(sat_params)] * model.getNumCoils()
     model.setSaturationFunctions(sat_functions)
     assert model.isValid()
-    currents = 8 * np.ones((8, 1), np.float)
-    position = np.zeros((3, 1), np.float)
+    currents = 8 * np.ones((8, 1), np.float64)
+    position = np.zeros((3, 1), np.float64)
     field_gradient = model.getModel().computeFieldGradient5FromCurrents(
         position, currents
     )
@@ -136,7 +136,7 @@ def test_backward_model_mpem_L2_saturation_toohigh():
     bmodel = BackwardModelSaturation()
     bmodel.setCalibrationFile(cal_path)
     field = np.array([-0.129076, -0.0131011, -0.083101])
-    position = np.zeros((3, 1), np.float)
+    position = np.zeros((3, 1), np.float64)
     currents_calc = bmodel.computeCurrentsFromField(position, field)
     assert np.linalg.norm(currents_calc) > 0
 
@@ -145,8 +145,8 @@ def test_backward_model_nls_pair():
     import numpy as np
     from mag_manip.mag_manip import BackwardModelNLS, ForwardModelMPEM
 
-    position = np.zeros((3,), np.float)
-    field = np.array([30e-3, 0, 0], np.float)
+    position = np.zeros((3,), np.float64)
+    field = np.array([30e-3, 0, 0], np.float64)
 
     r = rospkg.RosPack()
     pkg_path = r.get_path("mag_manip")
@@ -161,14 +161,14 @@ def test_backward_model_nls_pair():
 
     assert ret
 
-    gradient5 = np.zeros((5,), np.float)
+    gradient5 = np.zeros((5,), np.float64)
     ret, currents = model.computeCurrentsFromFieldGradient5Ret(
         position, field, gradient5
     )
     assert ret
 
-    dipole = np.array([1, 0, 0], np.float)
-    gradient3 = np.array([0.5, 0, 0], np.float)
+    dipole = np.array([1, 0, 0], np.float64)
+    gradient3 = np.array([0.5, 0, 0], np.float64)
     ret, currents = model.computeCurrentsFromFieldDipoleGradient3Ret(
         position, field, dipole, gradient3
     )

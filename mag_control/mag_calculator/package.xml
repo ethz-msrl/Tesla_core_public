@@ -17,7 +17,7 @@
 -->
 <package format="3">
   <name>mag_calculator</name>
-  <version>4.0.0</version>
+  <version>4.0.1</version>
   <description>ROS nodes for performing magnetic calculations between currents and fields</description>
   
   <maintainer email="fheemeyer@ethz.ch">Florian Heemeyer</maintainer>

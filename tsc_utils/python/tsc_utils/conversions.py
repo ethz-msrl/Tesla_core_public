@@ -57,7 +57,7 @@ def point_msg_to_np(p):
         np.ndarray: version of p
     """
 
-    return np.array([p.x, p.y, p.z], np.float)
+    return np.array([p.x, p.y, p.z], np.float64)
 
 
 def np_to_point_msg(p):
@@ -94,7 +94,7 @@ def vector3_msg_to_np(p):
         np.ndarray: version of p
     """
 
-    return np.array([p.x, p.y, p.z], np.float)
+    return np.array([p.x, p.y, p.z], np.float64)
 
 
 def quaternion_msg_to_np(q):
@@ -213,7 +213,7 @@ def to_homogeneous(P):
     Returns:
         np.ndarray: a Nx4 array where positions are in [x, y, z, 1]^T homogenous form
     """
-    Ph = np.ones((P.shape[0], 4), np.float)
+    Ph = np.ones((P.shape[0], 4), np.float64)
     Ph[:, 0:3] = P
     return Ph
 

@@ -1,5 +1,64 @@
 # Changelog
 
+## [v4.0.1](https://github.com/ethz-msrl/Tesla_core/tree/v4.0.1) (2023-05-25)
+
+[Full Changelog](https://github.com/ethz-msrl/Tesla_core/compare/v4.0.0...v4.0.1)
+
+**Implemented enhancements:**
+
+- Differenciate calibration for Navion 1.1 and 1.2 [\#195](https://github.com/ethz-msrl/Tesla_core/pull/195) ([qboehler](https://github.com/qboehler))
+
+**Fixed bugs:**
+
+- Python encoding error on Ubuntu 18.04  [\#193](https://github.com/ethz-msrl/Tesla_core/issues/193)
+- Fix depreciated np.float [\#199](https://github.com/ethz-msrl/Tesla_core/pull/199) ([qboehler](https://github.com/qboehler))
+- Fixing service for calibration file loading in forward model node [\#197](https://github.com/ethz-msrl/Tesla_core/pull/197) ([qboehler](https://github.com/qboehler))
+- Fix encoding problem in poses\_custom\_grid\_node.py [\#194](https://github.com/ethz-msrl/Tesla_core/pull/194) ([qboehler](https://github.com/qboehler))
+
+**Merged pull requests:**
+
+- Updated workflow files to run ros noetic on Ubuntu 20.04 [\#198](https://github.com/ethz-msrl/Tesla_core/pull/198) ([florianheemeyer](https://github.com/florianheemeyer))
+- Add time stamps for latency estimation of eMNS control [\#196](https://github.com/ethz-msrl/Tesla_core/pull/196) ([fableu](https://github.com/fableu))
+- Add release trigger [\#192](https://github.com/ethz-msrl/Tesla_core/pull/192) ([florianheemeyer](https://github.com/florianheemeyer))
+- Changed automated commits to be performed by bot [\#191](https://github.com/ethz-msrl/Tesla_core/pull/191) ([florianheemeyer](https://github.com/florianheemeyer))
+- Changed to copy subfolders only [\#190](https://github.com/ethz-msrl/Tesla_core/pull/190) ([florianheemeyer](https://github.com/florianheemeyer))
+- Commit and push changes [\#189](https://github.com/ethz-msrl/Tesla_core/pull/189) ([florianheemeyer](https://github.com/florianheemeyer))
+- Featrue/push to public workflow [\#188](https://github.com/ethz-msrl/Tesla_core/pull/188) ([florianheemeyer](https://github.com/florianheemeyer))
+- Changed license header in all source files. [\#187](https://github.com/ethz-msrl/Tesla_core/pull/187) ([florianheemeyer](https://github.com/florianheemeyer))
+- Capitalize send button label text [\#186](https://github.com/ethz-msrl/Tesla_core/pull/186) ([dreyfusr](https://github.com/dreyfusr))
+- made debian workflow manually triggerable [\#184](https://github.com/ethz-msrl/Tesla_core/pull/184) ([DerickSivakumaran](https://github.com/DerickSivakumaran))
+- Commiting version number changes [\#183](https://github.com/ethz-msrl/Tesla_core/pull/183) ([florianheemeyer](https://github.com/florianheemeyer))
+
+## [v4.0.0](https://github.com/ethz-msrl/Tesla_core/tree/v4.0.0) (2022-09-13)
+
+[Full Changelog](https://github.com/ethz-msrl/Tesla_core/compare/v3.1.0...v4.0.0)
+
+**Implemented enhancements:**
+
+- Improvement of the Magnetic Field Rotation Panel  [\#177](https://github.com/ethz-msrl/Tesla_core/issues/177)
+- Formatting of Python files for compliance with flake8 linter [\#168](https://github.com/ethz-msrl/Tesla_core/issues/168)
+- Improve magfield rotation panel [\#178](https://github.com/ethz-msrl/Tesla_core/pull/178) ([qboehler](https://github.com/qboehler))
+- Test node: Field publisher [\#167](https://github.com/ethz-msrl/Tesla_core/pull/167) ([jstiefel](https://github.com/jstiefel))
+
+**Fixed bugs:**
+
+- Fails to compile packages depending on Ceres [\#176](https://github.com/ethz-msrl/Tesla_core/issues/176)
+- Fixed ROS\_DISTRO env variable in README.md [\#173](https://github.com/ethz-msrl/Tesla_core/pull/173) ([qboehler](https://github.com/qboehler))
+- Fix outdated module import in rosbag\_processor.py [\#171](https://github.com/ethz-msrl/Tesla_core/pull/171) ([qboehler](https://github.com/qboehler))
+
+**Merged pull requests:**
+
+- Create LICENSE [\#182](https://github.com/ethz-msrl/Tesla_core/pull/182) ([florianheemeyer](https://github.com/florianheemeyer))
+- Documentation/prepare open source release [\#181](https://github.com/ethz-msrl/Tesla_core/pull/181) ([DerickSivakumaran](https://github.com/DerickSivakumaran))
+- DELETED: mag\_rod code since it is moved to Tesla [\#180](https://github.com/ethz-msrl/Tesla_core/pull/180) ([florianheemeyer](https://github.com/florianheemeyer))
+- Update Navion 2 model [\#179](https://github.com/ethz-msrl/Tesla_core/pull/179) ([qboehler](https://github.com/qboehler))
+- Renamed MAGMANIP\_SHOW\_WARNINGS preprocessor variable [\#175](https://github.com/ethz-msrl/Tesla_core/pull/175) ([samlcharreyron](https://github.com/samlcharreyron))
+- Added the dipole-model-fit program to fit MPEM models [\#174](https://github.com/ethz-msrl/Tesla_core/pull/174) ([samlcharreyron](https://github.com/samlcharreyron))
+- Added pre-commit hooks [\#172](https://github.com/ethz-msrl/Tesla_core/pull/172) ([samlcharreyron](https://github.com/samlcharreyron))
+- Automated API documentation generation [\#170](https://github.com/ethz-msrl/Tesla_core/pull/170) ([samlcharreyron](https://github.com/samlcharreyron))
+- Added guidelines for Python linting and formatting [\#169](https://github.com/ethz-msrl/Tesla_core/pull/169) ([qboehler](https://github.com/qboehler))
+- Automatic generation of debian packages [\#166](https://github.com/ethz-msrl/Tesla_core/pull/166) ([samlcharreyron](https://github.com/samlcharreyron))
+
 ## [v3.1.0](https://github.com/ethz-msrl/Tesla_core/tree/v3.1.0) (2021-06-23)
 
 [Full Changelog](https://github.com/ethz-msrl/Tesla_core/compare/v3.0.0...v3.1.0)
@@ -32,6 +91,7 @@
 
 **Merged pull requests:**
 
+- Release v3.1.0 [\#165](https://github.com/ethz-msrl/Tesla_core/pull/165) ([samlcharreyron](https://github.com/samlcharreyron))
 - Added back hadolint job [\#162](https://github.com/ethz-msrl/Tesla_core/pull/162) ([samlcharreyron](https://github.com/samlcharreyron))
 - Added const\_curv\_sim package [\#161](https://github.com/ethz-msrl/Tesla_core/pull/161) ([samlcharreyron](https://github.com/samlcharreyron))
 - Fix typo in const\_curv\_rod README [\#159](https://github.com/ethz-msrl/Tesla_core/pull/159) ([qboehler](https://github.com/qboehler))

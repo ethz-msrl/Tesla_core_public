@@ -58,13 +58,13 @@ def grad5_to_grad33(x):
     """
     if np.array(x).ndim > 1:
         N = x.shape[0]
-        m = np.zeros((N, 3, 3), np.float)
+        m = np.zeros((N, 3, 3), np.float64)
         m[:, 0, 0:3] = x[:, 0:3]
         m[:, 1, 1:3] = x[:, 3:5]
         m[:, 2, 2] = -(m[:, 0, 0] + m[:, 1, 1])
         return np.triu(m, 1) + np.tril(m.transpose((0, 2, 1)))
     else:
-        m = np.zeros((3, 3), np.float)
+        m = np.zeros((3, 3), np.float64)
         m[0, 0:3] = x[0:3]
         m[1, 1:3] = x[3:5]
         m[2, 2] = -(m[0, 0] + m[1, 1])
@@ -96,7 +96,7 @@ def generate_currents_step_changes(current_vals, repeats, ncoils=8):
     """
 
     N = len(current_vals)
-    currents = np.zeros((ncoils * 2 * repeats * N, ncoils), np.float)
+    currents = np.zeros((ncoils * 2 * repeats * N, ncoils), np.float64)
     current_nz = np.kron(current_vals, np.eye(ncoils)).reshape((N * ncoils, ncoils))
     currents[::2] = np.repeat(current_nz, repeats, axis=0)
     return currents
@@ -123,7 +123,7 @@ def generate_field_step_changes(field_mags, repeats):
     """
 
     N = len(field_mags)
-    fields = np.zeros((6 * repeats * N, 3), np.float)
+    fields = np.zeros((6 * repeats * N, 3), np.float64)
     fields[::2] = np.repeat(
         np.kron(field_mags, np.eye(3)).reshape((N * 3, 3)), repeats, axis=0
     )
@@ -143,6 +143,6 @@ def write_step_changes(filename, step_changes, step_duration):
     N = step_changes.shape[0]
 
     data = np.concatenate(
-        (step_changes, step_duration * np.ones((N, 1), np.float)), axis=1
+        (step_changes, step_duration * np.ones((N, 1), np.float64)), axis=1
     )
     np.savetxt(filename, data)

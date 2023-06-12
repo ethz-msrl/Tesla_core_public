@@ -69,7 +69,7 @@ if __name__ == "__main__":
         d_coil = {"kernel": "gaussian", "shape_param": 20.0, "nodes": []}
         for x, y, z in zip(xg.ravel(), yg.ravel(), zg.ravel()):
             p = np.array([x, y, z])
-            currents = np.zeros((Ne,), np.float)
+            currents = np.zeros((Ne,), np.float64)
             currents[c] = 1.0
             field = cal.fieldAtPoint(currents, p)
             d_coil["nodes"].append(

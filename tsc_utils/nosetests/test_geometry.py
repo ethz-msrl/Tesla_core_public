@@ -86,7 +86,7 @@ def test_get_plane_orthogonal_projection_matrix():
         )
 
         P = get_plane_orthogonal_projection_matrix(normal)
-        assert_allclose(np.dot(P, normal), np.zeros((3,), np.float), atol=1e-8)
+        assert_allclose(np.dot(P, normal), np.zeros((3,), np.float64), atol=1e-8)
 
 
 def test_project_vector_onto_plane():

@@ -170,11 +170,6 @@ void mag_calculator::ForwardModel::publishMagneticFields() {
   mag_msgs::FieldArrayStamped mfA;
 
   mfA.header.frame_id = mns_frame_id_;
-  if (currents_msg_.header.stamp > poses_.header.stamp) {
-    mfA.header.stamp = currents_msg_.header.stamp;
-  } else {
-    mfA.header.stamp = poses_.header.stamp;
-  }
 
   mag_msgs::FieldArrayStamped grad_array;
   if (publish_field_aligned_grad_array_) {
@@ -240,7 +235,7 @@ void mag_calculator::ForwardModel::publishMagneticFields() {
       grad_array.fields.push_back(grad3);
     }
   }
-
+  mfA.header.stamp = ros::Time::now();
   pub_field_array_.publish(mfA);
 
   if (publish_field_aligned_grad_array_) {
@@ -251,14 +246,14 @@ void mag_calculator::ForwardModel::publishMagneticFields() {
 bool mag_calculator::ForwardModel::loadCalibrationSrv(
     mag_calculator::load_calibration_file::Request& req,
     mag_calculator::load_calibration_file::Response& resp) {
+  cal_path_ = req.filepath;
+
   try {
     p_forward_model_->setCalibrationFile(cal_path_);
   } catch (std::exception& e) {
     ROS_ERROR("Failed to load calibration");
     return false;
   }
-
-  cal_path_ = req.filepath;
 
   return true;
 }
